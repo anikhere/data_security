@@ -1,5 +1,6 @@
 from network_security.components.di import DataIngestion
-from network_security.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig
+from network_security.components.dv import *
+from network_security.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig, DataValidation
 from network_security.logging.logging import logging
 from network_security.exceptions.exceptions import CustomException
 import sys
@@ -18,9 +19,13 @@ if __name__ == "__main__":
         )
 
         artifacts = data_ingestion.initiate_data_ingestion()
-
+        
         logging.info("Started ingestion")
         print(artifacts)
-
+        data_validate_config = DataValidation(training_pipeline_config)
+        data_validate = DataValidate(data_validation_config=data_validate_config,data_ingestion_artifact=artifacts)
+        logging.info(f'created the config')
+        data_validate_artifact = data_validate.initiate_validation()
+        logging.info(f'created the artifact')
     except Exception as e:
         raise CustomException(e, sys)

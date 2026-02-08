@@ -1,0 +1,72 @@
+columns:
+   - having_IP_Address:
+   - URL_Length:
+   - Shortening_Service:
+   - having_At_Symbol:
+   - double_slash_redirecting:
+   - prefix_Suffix:
+   - having_Sub_Domain:
+   - SSLfinal_State:
+   - Domain_registeration_lenght:
+   - Favicon:
+   - port:
+   - HTTPS_Token:
+   - Request_URL:
+   - URL_of_Anchor:
+   - Links_in_tags:
+   - SFH:
+   - Submitting_to_email:
+   - Abnormal_URL:
+   - Redirect:
+   - on_mouseover:
+   - RightClick:
+   - popUpWindow:
+   - Iframe:
+   - age_of_domain:
+   - DNSRecord:
+   - web_traffic:
+   - Page_Rank:
+   - Google_Index:
+   - Links-pointing_to_page:
+   - Statistical_report:
+   - Result: int64
+
+Numeric_columns:
+   - having_IP_Address 
+    - URL_Length
+    - Shortening_Service
+    - having_At_Symbol
+    - double_slash_redirecting
+    - prefix_Suffix
+    - having_Sub_Domain
+    - SSLfinal_State
+    - Domain_registeration_lenght
+    - Favicon
+    - port
+    - HTTPS_Token
+    - Request_URL
+    - URL_of_Anchor
+    - Links_in_tags
+    - SFH
+    - Submitting_to_email
+    - Abnormal_URL
+    - Redirect
+    - on_mouseover
+    - RightClick
+    - popUpWindow
+    - Iframe
+    - age_of_domain
+    - DNSRecord
+    - web_traffic
+    - Page_Rank
+    - Google_Index
+    - Links-pointing_to_page
+    - Statistical_report
+    - Result
+
+
+
+
+
+
+

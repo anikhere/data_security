@@ -1,26 +1,22 @@
-from setuptools import find_packages,setup
+from setuptools import find_packages, setup
 from typing import List
 
-requirements_lst:List[str] =[]
+def get_requirements() -> List[str]:
+    requirements_lst: List[str] = []
 
-def get_requirements()->List[str]:
     try:
-        with open('requirements.txt','r') as file:
-            files = file.readlines()
-            for line in files:
-                requirements = line.strip()
-                if requirements and requirements!= '-e .':
-                    requirements_lst.append(requirements)
+        with open('requirements.txt', 'r') as file:
+            for line in file:
+                req = line.strip()
+                if req and req != '-e .':
+                    requirements_lst.append(req)
+                    print(f"Added requirement: {req}")
+            print(f"Total requirements found: {len(requirements_lst)}")
     except FileNotFoundError:
-        print(f'the file has not there')
-    
+        print("requirements.txt not found")
+
     return requirements_lst
 
-
-
-if __name__ == '__main__':
-    result = get_requirements()
-    print(f"Requirements found: {result}")
 
 setup(
     name='Data_security',
@@ -28,5 +24,5 @@ setup(
     author='Taha Anik',
     author_email='tahaanik729@gmail.com',
     packages=find_packages(),
-    libraries=get_requirements()
+    install_requires=get_requirements()   # ✅ FIX
 )

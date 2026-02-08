@@ -38,3 +38,44 @@ class DataIngestionConfig:
         self.test_size = train_pipe.D_I_TRAIN_TEST_SPLIT_RATIO
         collection_name = train_pipe.DATA_INGESTION_NAME
         db_name = train_pipe.D_I_DB_NAME
+
+##__________Data Validation Config__________##
+class DataValidation:
+    def __init__(self,train_config:TrainingPipelineConfig):
+        self.data_val_dir = os.path.join(
+            train_config.artifact_dir,
+            train_pipe.Data_val_dir_name
+        )
+        self.valid_data_dir = os.path.join(
+            self.data_val_dir,
+            train_pipe.Data_val_valid_dir
+        )
+        self.invalid_data_dir = os.path.join(
+            self.data_val_dir,
+            train_pipe.Data_val_invalid_dir
+        )
+        self.valid_train_file = os.path.join(
+            self.valid_data_dir,
+            train_pipe.TRAIN_FILE_NAME
+        )
+        self.valid_test_file = os.path.join(
+            self.valid_data_dir,
+            train_pipe.TEST_FILE_NAME
+        )
+        self.invalid_train_file = os.path.join(
+            self.invalid_data_dir,
+            train_pipe.TRAIN_FILE_NAME
+        )
+        self.invalid_test_file = os.path.join(
+            self.invalid_data_dir,
+            train_pipe.TEST_FILE_NAME
+        )
+        self.drift_report_dir = os.path.join(
+            self.data_val_dir,
+            train_pipe.Data_val_drift_report_dir,
+            train_pipe.Data_val_report_name
+        )
+        
+class TransformationConfig:
+    def __init__(self,train_config:TrainingPipelineConfig):
+        

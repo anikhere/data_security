@@ -3,5 +3,16 @@ Name: Data_security
 Version: 0.0.1
 Author: Taha Anik
 Author-email: tahaanik729@gmail.com
+Requires-Dist: python-dotenv
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: pymongo
+Requires-Dist: pymongo[srv]==4.7
+Requires-Dist: pyaml
+Requires-Dist: dill
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: pytest
 Dynamic: author
 Dynamic: author-email
+Dynamic: requires-dist

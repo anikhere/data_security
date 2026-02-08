@@ -2,7 +2,7 @@ from network_security.exceptions.exceptions import CustomException
 import sys
 from network_security.logging.logging import logging 
 from network_security.entity.config_entity import DataIngestionConfig
-from network_security.entity.artifacts_entity import ArtifactsEntity
+from network_security.entity.artifacts_entity import Artifact
 import os 
 import pymongo
  
