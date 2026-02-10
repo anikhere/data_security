@@ -30,3 +30,13 @@ Data_val_valid_dir:str = 'validated'
 Data_val_invalid_dir:str= 'invalid'
 Data_val_drift_report_dir:str= 'drift_report'
 Data_val_report_name:str = 'report.yaml'
+
+data_transform_dir: str="data transformation"
+data_transform_transformed_dir: str = 'transformed'
+transformed_object_dir:str="transformed_object"
+
+Data_transformation_input_params: dict = {
+    'missing_values': np.nan,
+    'n_neighbors':3,
+    'weights':'uniform'
+}

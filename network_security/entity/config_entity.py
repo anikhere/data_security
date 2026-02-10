@@ -1,6 +1,6 @@
 from datetime import datetime
 import os 
-from network_security.constants import train_pipe
+from network_security.constants.train_pipe import train_pipe
 
 print(train_pipe.ARTIFACTS_DIR)
 
@@ -78,4 +78,8 @@ class DataValidation:
         
 class TransformationConfig:
     def __init__(self,train_config:TrainingPipelineConfig):
-        
+        self.data_transformation_dir:str = os.path.join(train_config.artifact_dir,train_pipe.data_transform_dir)
+        self.data_transformed_file_path:str = os.path.join(self.data_transformation_dir,train_pipe.data_transform_transformed_dir)
+        self.data_tranformed_train_path:str = os.pah.join(self.data_transformation_dir,train_pipe.TRAIN_FILE_NAME)
+        self.data_tranformed_test_path:str = os.pah.join(self.data_transformation_dir,train_pipe.TEST_FILE_NAME)
+        self.transformed_object:str = os.path.join(self.data_transformation_dir,train_pipe.transformed_object_dir)
