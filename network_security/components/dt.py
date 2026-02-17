@@ -57,6 +57,11 @@ class DataTransform:
             save_numpy(self.transform_config.data_tranformed_train_path,train_arr)
             save_numpy(self.transform_config.data_tranformed_test_path,test_arr)
             save_obj(self.transform_config.transformed_object,obj)
+            dtArtifact = DataTransformArtifact(
+                trans_file_path=self.transform_config.data_transformed_file_path,
+                transformed_train_file=self.transform_config.data_tranformed_train_path,
+                transformed_test_file=self.transform_config.data_tranformed_test_path
+            )
         except Exception as e:
             raise CustomException(e,sys)
         

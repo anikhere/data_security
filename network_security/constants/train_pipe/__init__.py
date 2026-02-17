@@ -13,6 +13,7 @@ SCHEMA_FILE_PATH: str = os.path.join(
     'data_schema',
     'schema.yaml'
 )
+SAVED_MODEL_DIR = os.path.join("saved_models")
 
 
 
@@ -40,3 +41,12 @@ Data_transformation_input_params: dict = {
     'n_neighbors':3,
     'weights':'uniform'
 }
+###----------------------------model Trainer----------------------------------------
+
+model_trainer_dir:str = "model_trainer"
+trained_dir:str = 'Trained_model'
+MODEL_FILE_NAME:str = 
+model_trainer_expected_score:float = 0.6
+model_threshold:float = 0.05
+
+

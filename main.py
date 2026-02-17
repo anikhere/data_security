@@ -1,6 +1,7 @@
 from network_security.components.di import DataIngestion
 from network_security.components.dv import *
-from network_security.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig, DataValidation
+from network_security.components.dt import *
+from network_security.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig, DataValidation, TransformationConfig
 from network_security.logging.logging import logging
 from network_security.exceptions.exceptions import CustomException
 import sys
@@ -27,5 +28,9 @@ if __name__ == "__main__":
         logging.info(f'created the config')
         data_validate_artifact = data_validate.initiate_validation()
         logging.info(f'created the artifact')
+        data_transform_config = TransformationConfig(training_pipeline_config)
+        data_Transformation = DataTransform(data_validate_artifact,TransformationConfig)
+        transformer = data_Transformation.get_data_transform()
+        data_Transformation_artifact = data_Transformation.initiate_transform()
     except Exception as e:
         raise CustomException(e, sys)

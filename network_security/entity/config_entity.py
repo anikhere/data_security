@@ -83,3 +83,12 @@ class TransformationConfig:
         self.data_tranformed_train_path:str = os.pah.join(self.data_transformation_dir,train_pipe.TRAIN_FILE_NAME)
         self.data_tranformed_test_path:str = os.pah.join(self.data_transformation_dir,train_pipe.TEST_FILE_NAME)
         self.transformed_object:str = os.path.join(self.data_transformation_dir,train_pipe.transformed_object_dir)
+
+class ModelTrainerConfig:
+    def __init__(self,train_config:TrainingPipelineConfig):
+        self.data_trainer_dir:str = os.path.join(train_pipe.artifact_dir,train_pipe.model_trainer_dir)
+        self.train_model_path:str = os.path.join(train_pipe.trained_dir,train_pipe.model_file_name)
+        self.expected_acc: float = os.path.join(train_pipe.model_trainer_expected_score)
+        self.overfitting_threshold = train_pipe.model_threshold
+
+
